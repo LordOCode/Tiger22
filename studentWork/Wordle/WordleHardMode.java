@@ -1,21 +1,27 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
-public class Wordle {
+public class WordleHardMode {
    public static void main(String[] args) {
-      playWordleGame();
+      playWordleHardGame();
    }
    
-   public static void playWordleGame() {
+   public static void playWordleHardGame() {
       // Plays a game of wordle (see https://www.powerlanguage.co.uk/wordle/)
       
       System.out.println("There are " + WordLists.TARGETS.size() + " possible targets");
       
       String target = getRandomTarget();
       
+      ArrayList<Character> grayLetters = new ArrayList<Character>();
+      
       for (int i = 1; i <= 6; i++) {
          System.out.println("\nGuess " + i);
          
-         String guess = getGuess();
+         System.out.print("Your current gray letters are: ");
+         printGrayLetters(grayLetters);
+         
+         String guess = getGuess(grayLetters);
          System.out.println("You guessed " + guess);
          
          // TODO (Step 1): change the if condition below to check if the guess was correct
@@ -24,7 +30,7 @@ public class Wordle {
             return;
          } else {
             System.out.println("That was not the target word.");
-            printGuessFeedback(guess, target);
+            printGuessFeedback(guess, target, grayLetters);
          }
       }
       
@@ -39,14 +45,20 @@ public class Wordle {
        * WordLists.TARGETS.size() - 1 (inclusive) and returning
        * the word stored at that index.
        */
-
       return "arrow";
    }
    
-   public static String getGuess() {
+   public static void printGrayLetters(ArrayList<Character> grayLetters) {
+      /*
+       * TODO (Step 3): implement this method to print out the list of characters
+       * that guesses are not allowed to use.
+       */
+   }
+   
+   public static String getGuess(ArrayList<Character> grayLetters) {
       /*
        * This method which should return a valid guess entered by the user.
-       * A valid guess is a real word which is 5 letters long.
+       * A valid guess is a real word which is 5 letters long that does not use any gray letters.
        */
       Scanner console = new Scanner(System.in);
       
@@ -54,11 +66,13 @@ public class Wordle {
          System.out.print("Your guess: ");
          String guess = console.nextLine().toLowerCase();
          
-         // TODO (Step 3): change the if condition below to check if the guess is the right length
+         // TODO (Step 4): change the if condition below to check if the guess is the right length
          if (false) {
             System.out.println("Your guess must have 5 letters");
          } else if (!isRealWord(guess)) {
             System.out.println("You must enter a real word as your guess");
+         } else if (usesGrayLetter(guess, grayLetters)) {
+            System.out.println("Your guess cannot contain any gray letters");
          } else {
             return guess;
          }
@@ -67,7 +81,7 @@ public class Wordle {
    
    public static boolean isRealWord(String guess) {
       /*
-       * TODO (Step 5): implement this method, which checks to make sure
+       * TODO (Step 6): implement this method, which checks to make sure
        * the user's guess is a real word.
        * A real word is one that is present in the WordLists.WORDS ArrayList.
        * You should implement a search algorithm to check if the guess is contained
@@ -76,22 +90,34 @@ public class Wordle {
       return true;
    }
    
-   public static void printGuessFeedback(String guess, String target) {
+   public static boolean usesGrayLetter(String guess, ArrayList<Character> grayLetters) {
       /*
-       * TODO (Step 4): implement this method which should 
-       * print out feedback about the user's guess.
+       * TODO (Step 7): implement this method which checks to make sure that the guess does not
+       * contain any of the letters from the grayLetters list.
+       * You can implement this method by looping over the letters in the guess and checking
+       * to make sure it is not in the grayLetters list.
+       */
+      return false;
+   }
+   
+   public static void printGuessFeedback(String guess, String target, ArrayList<Character> grayLetters) {
+      /*
+       * TODO (Step 5): implement this method which should print out feedback about the user's guess,
+       * as well as update the grayLetters list with any newly found gray letters.
+       *
        * Loop over each letter in the guess.
        *     - if the letter matches the letter in the same position in the target, print "green"
-       *     - if the letter is not in the target at all, print "gray"
+       *     - if the letter is not in the target at all, print "gray" and add the letter to the grayLetters list
        *     - otherwise, the guessed letter is in the wrong position, so print "yellow"
        *
-       * Example: the method call printGuessFeedback("first", "split") would print
+       * Example: the method call printGuessFeedback("first", "split", new ArrayList<Character>()) would print
        *     Your guess feedback is
        *     f: gray
        *     i: yellow
        *     r: gray
        *     s: yellow
        *     t: green
+       * and the grayLetters ArrayList would contain the letters 'f' and 'r'.
        */
       System.out.println("Your guess feedback is");
    }

@@ -1,3 +1,5 @@
+package studentWork.Wordle;
+
 import java.util.Scanner;
 
 public class Wordle {
@@ -9,7 +11,7 @@ public class Wordle {
       // Plays a game of wordle (see https://www.powerlanguage.co.uk/wordle/)
       
       System.out.println("There are " + WordLists.TARGETS.size() + " possible targets");
-      
+       
       String target = getRandomTarget();
       
       for (int i = 1; i <= 6; i++) {
@@ -19,7 +21,7 @@ public class Wordle {
          System.out.println("You guessed " + guess);
          
          // TODO (Step 1): change the if condition below to check if the guess was correct
-         if (false) {
+         if (true) {
             System.out.println("You found the target word in " + i + " guesses!");
             return;
          } else {
@@ -39,7 +41,6 @@ public class Wordle {
        * WordLists.TARGETS.size() - 1 (inclusive) and returning
        * the word stored at that index.
        */
-
       return "arrow";
    }
    
