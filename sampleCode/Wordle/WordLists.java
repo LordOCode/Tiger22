@@ -48,5 +48,8 @@ public class WordLists {
    static {
       loadFile(WORDS, DIRECTORY + "words.txt");
       loadFile(TARGETS, DIRECTORY + "targets.txt");
+      
+      WORDS.addAll(TARGETS);
+      Collections.sort(WORDS);
    }
 }
