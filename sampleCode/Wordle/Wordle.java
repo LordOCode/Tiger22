@@ -39,8 +39,9 @@ public class Wordle {
        * WordLists.TARGETS.size() - 1 (inclusive) and returning
        * the word stored at that index.
        */
-
+        
       return "arrow";
+      
    }
    
    public static String getGuess() {

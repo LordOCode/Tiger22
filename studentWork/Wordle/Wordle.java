@@ -34,13 +34,7 @@ public class Wordle {
    }
    
    public static String getRandomTarget() {
-      /*
-       * TODO (Step 2): implement this method which should return 
-       * a random word from the ArrayList WordLists.TARGETS.
-       * You can do this by creating a random index between 0 and
-       * WordLists.TARGETS.size() - 1 (inclusive) and returning
-       * the word stored at that index.
-       */
+      
       return "arrow";
    }
    
