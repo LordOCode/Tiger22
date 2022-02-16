@@ -5,6 +5,7 @@ public class Person {
    String name;
    int age;
    String[] pets;
+   String color;
    // TODO (step 3): add another field to the Person class here.
    
    
@@ -26,5 +27,7 @@ public class Person {
    }
    
    // TODO (step 4): add another method which prints something related to the field you added in step 1
-   
+   public void printColor() {
+      System.out.println("My favorite color is " + color);
+   }
 }
