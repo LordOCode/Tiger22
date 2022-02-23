@@ -10,31 +10,38 @@ public class Point {
 
     public Point(int x, int y) {
         // TODO: Fill out the constructor.
-    }
+          this.x = x;
+          this.y = y;
+        }  
 
     // Moves x by dx and y by dy.
     public void translate(int dx, int dy) {
         // TODO: Fill this out.
         // What are two ways to implement this?
-
+        this.x = dx;
+        this.y = dy;
     }
 
     public int getX() {
         // TODO: Fill this out.
+        return x;
         return 0;
     }
 
     public int getY() {
         // TODO: Fill this out.
+        return x;
         return 0;
     }
 
     public void setX(int x) {
         // TODO: Fill this out.
+        x = this.x;
     }
 
     public void setY(int y) {
         // TODO: Fill this out.
+        y = this.y;
     }
 
     // Return the distance from this point to p.
