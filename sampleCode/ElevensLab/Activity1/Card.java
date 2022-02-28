@@ -1,3 +1,5 @@
+import javax.print.attribute.standard.MediaSize.Other;
+
 // package sampleCode.ElevensLab.Activity1;
 
 
@@ -29,14 +31,16 @@ public class Card {
 	 */
 	public void setSuit(String s) {
 	 /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+	suit = s;
 	}
-
+     
 	/**
 	 * Sets this <code>Card's</code> rank.
 	 * @param r the new rank 
 	 */
 	public void setRank(String r) {
 	 /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+	rank = r;
 	}
 
 	/**
@@ -45,6 +49,7 @@ public class Card {
 	 */
 	public void setPointValue(int pv) {
 	 /* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+	pointValue = pv;
 	}
 
 	/**
@@ -53,6 +58,7 @@ public class Card {
 	 */
 	public String getSuit() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+	return suit;
 	}
 
 	/**
@@ -61,6 +67,7 @@ public class Card {
 	 */
 	public String getRank() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+	return rank;
 	}
 
 	/**
@@ -69,6 +76,7 @@ public class Card {
 	 */
 	public int getPointValue() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+	return pointValue;
 	}
 
 	/** Compare this card with the argument.
@@ -79,6 +87,16 @@ public class Card {
 	 */
 	public boolean matches(Card otherCard) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		
+		if(rank.equals(otherCard.rank) && suit.equals(otherCard.suit) && pointValue == otherCard.pointValue){
+			return true;
+            
+		} else{ return false;      }
+		
+      
+
+
+	
 	}
 
 	/**
