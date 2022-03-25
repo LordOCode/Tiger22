@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "studentWork/ClassesIntro",
         "sampleCode/Wordle",
-        "studentWork/ClassesIntro"
+        "studentWork/Inheritance"
     ]
 }
