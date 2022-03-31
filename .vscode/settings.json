@@ -1,7 +1,13 @@
 {
     "java.project.sourcePaths": [
+<<<<<<< HEAD
         "studentWork/ClassesIntro",
         "sampleCode/Wordle",
         "studentWork/Inheritance"
+=======
+        "sampleCode/Inheritance",
+        "sampleCode/ElevensLab/Activity2",
+        "sampleCode/Trio"
+>>>>>>> 2b131eece5ae1fd60dccd210e744326282f37cb9
     ]
 }
