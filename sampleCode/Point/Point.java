@@ -10,28 +10,19 @@ public class Point {
 
     public Point(int x, int y) {
         // TODO: Fill out the constructor.
-<<<<<<< HEAD
           this.x = x;
           this.y = y;
         }  
-=======
-        this.x = x;
-        this.y = y;
-    }
->>>>>>> 520bdb96981d02b0fe7338265fc305260440d474
 
     // Moves x by dx and y by dy.
     public void translate(int dx, int dy) {
         // TODO: Fill this out.
         // What are two ways to implement this?
-<<<<<<< HEAD
         this.x = dx;
         this.y = dy;
-=======
         this.x += dx;
         this.y += dy;
 
->>>>>>> 520bdb96981d02b0fe7338265fc305260440d474
     }
 
     public int getX() {
